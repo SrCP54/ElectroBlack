@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento y Diagnóstico - ElectroBlack</title>
+</head>
+<body style="font-family: sans-serif; background-color: #f9f9f9; color: #222; margin: 0; padding: 15px; box-sizing: border-box;">
+
+    <!-- CONTENEDOR FLEXIBLE PRINCIPAL (Adaptable a móvil y escritorio) -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; box-sizing: border-box; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- COLUMNA IZQUIERDA: CONTENIDO PRINCIPAL Y FORMULARIO -->
+        <div style="flex: 3; min-width: 280px; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); box-sizing: border-box;">
+            
+            <header style="margin-bottom: 20px; text-align: center;">
+                <img src="IMG-20260527-WA0030.jpg" alt="Logo ElectroBlack" style="max-width: 160px; width: 100%; height: auto; display: block; margin: 0 auto 15px;">
+                <h1 style="font-size: 1.8em; margin: 0 0 10px 0;">Laboratorio de Mantenimiento Técnico</h1>
+                <p style="font-size: 1.05em; color: #555; margin: 0; line-height: 1.4;">Diagnóstico de fallas, cambios de componentes y optimización de entornos de software</p>
+            </header>
+
+            <hr style="border: 0; border-top: 2px solid #333; margin: 20px 0;">
+
+            <main>
+                <section>
+                    <h2 style="font-size: 1.4em; color: #222;">Reporte de Fallas e Inquietudes de Hardware</h2>
+                    <p style="margin-bottom: 20px; font-size: 0.95em; line-height: 1.4;">Por favor, completa los siguientes datos para preparar una propuesta de reparación y diagnóstico a medida:</p>
+
+                    <form action="#" method="POST">
+                        
+                        <!-- 1. DATOS DE CONTACTO -->
+                        <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+                            <legend><h3 style="font-size: 1.1em; margin: 0;">1. Datos de Contacto Obligatorios</h3></legend>
+                            <p style="margin-top: 10px;">
+                                <label for="correo_cliente"><strong>Tu correo electrónico (Solo Gmail):</strong></label><br><br>
+                                <input 
+                                    type="email" 
+                                    id="correo_cliente" 
+                                    name="correo_cliente" 
+                                    placeholder="ejemplo@gmail.com" 
+                                    style="width: 100%; padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"
+                                    required 
+                                    pattern="[a-zA-Z0-9._%+-]+@gmail\.com$"
+                                    title="Por cuestiones de soporte, debes introducir una dirección de correo válida que termine exclusivamente en @gmail.com"
+                                >
+                            </p>
+                        </fieldset>
+
+                        <!-- 2. TIPO DE MANTENIMIENTO -->
+                        <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; line-height: 1.5;">
+                            <legend><h3 style="font-size: 1.1em; margin: 0;">2. Tipo de Mantenimiento Requerido</h3></legend>
+                            <p style="margin-top: 10px; margin-bottom: 15px;">Selecciona la modalidad de servicio técnico que deseas contratar:</p>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <input type="radio" id="mant_preventivo" name="tipo_mantenimiento" value="preventivo" required style="margin-right: 8px;">
+                                <label for="mant_preventivo"><strong>Mantenimiento Preventivo:</strong> Limpieza, ajuste y diagnóstico técnico para evitar fallas futuras.</label>
+                            </div>
+
+                            <div style="margin-bottom: 12px;">
+                                <input type="radio" id="mant_predictivo" name="tipo_mantenimiento" value="predictivo" style="margin-right: 8px;">
+                                <label for="mant_predictivo"><strong>Mantenimiento Predictivo:</strong> Análisis técnico y mediciones para evaluar la vida útil restante de los componentes.</label>
+                            </div>
+
+                            <div style="margin-bottom: 12px;">
+                                <input type="radio" id="mant_correctivo" name="tipo_mantenimiento" value="correctivo" style="margin-right: 8px;">
+                                <label for="mant_correctivo"><strong>Mantenimiento Correctivo:</strong> Reparación directa de fallas operativas, componentes quemados o sustitución de piezas.</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="mant_periodico" name="tipo_mantenimiento" value="periodico" style="margin-right: 8px;">
+                                <label for="mant_periodico"><strong>Mantenimiento Periódico:</strong> Planes programados bajo contrato continuo <span style="color: #666;">(Exclusivo Clientes Corporativos)</span>.</label>
+                            </div>
+                        </fieldset>
+
+                        <!-- 3. CATEGORÍA DEL EQUIPO -->
+                        <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; line-height: 1.5;">
+                            <legend><h3 style="font-size: 1.1em; margin: 0;">3. Categoría del Equipo / Producto</h3></legend>
+                            <p style="margin-top: 10px; margin-bottom: 15px;">Selecciona el tipo de equipo al que se le aplicará el servicio:</p>
+                            
+                            <div style="margin-bottom: 10px;">
+                                <input type="radio" id="prod_computo" name="tipo_producto" value="computadoras_portatiles" required style="margin-right: 8px;">
+                                <label for="prod_computo"><strong>Computadoras y Portátiles (Desktops, Notebooks, Todo en Uno)</strong></label>
+                            </div>
+
+                            <div style="margin-bottom: 10px;">
+                                <input type="radio" id="prod_audio_video" name="tipo_producto" value="audio_video" style="margin-right: 8px;">
+                                <label for="prod_audio_video">Audio y Video (Sistemas de sonido, Home Theater, amplificadores, pantallas)</label>
+                            </div>
+
+                            <div style="margin-bottom: 10px;">
+                                <input type="radio" id="prod_celulares" name="tipo_producto" value="celulares" style="margin-right: 8px;">
+                                <label for="prod_celulares">Celulares y Dispositivos Móviles</label>
+                            </div>
+
+                            <div style="margin-bottom: 10px;">
+                                <input type="radio" id="prod_electrodomesticos" name="tipo_producto" value="electrodomesticos" style="margin-right: 8px;">
+                                <label for="prod_electrodomesticos">Electrodomésticos generales</label>
+                            </div>
+
+                            <div style="margin-bottom: 10px;">
+                                <input type="radio" id="prod_linea_blanca" name="tipo_producto" value="linea_blanca" style="margin-right: 8px;">
+                                <label for="prod_linea_blanca">Línea Blanca (Refrigeración, lavadoras, microondas)</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="prod_otros" name="tipo_producto" value="otros" style="margin-right: 8px;">
+                                <label for="prod_otros">Otros (Equipos especiales de laboratorio o telecomunicaciones)</label>
+                            </div>
+                        </fieldset>
+
+                        <!-- 4. REPORTE DE SITUACIÓN -->
+                        <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+                            <legend><h3 style="font-size: 1.1em; margin: 0;">4. Reporte de Situación e Inquietud</h3></legend>
+                            <p style="margin-top: 10px;"><label for="descripcion_falla"><strong>Describe los síntomas, fallas o detalles específicos del equipo seleccionado:</strong></label></p>
+                            <textarea 
+                                id="descripcion_falla" 
+                                name="descripcion_falla" 
+                                rows="6" 
+                                style="width: 100%; padding: 12px; font-size: 1em; font-family: sans-serif; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" 
+                                placeholder="Ejemplo: El equipo levanta temperaturas arriba de 85°C al ejecutar tareas pesadas, requiere mantenimiento físico profundo..." 
+                                required
+                            ></textarea>
+                        </fieldset>
+
+                        <!-- BOTÓN DE ENVÍO -->
+                        <button type="submit" style="background-color: #28A745; color: #fff; padding: 12px; width: 100%; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1em; box-sizing: border-box;">
+                            Enviar Reporte a Laboratorio
+                        </button>
+                    </form>
+                </section>
+
+                <hr style="border: 0; border-top: 1px solid #ccc; margin: 25px 0 15px;">
+                <p style="font-size: 1em; text-align: center;"><a href="index.html" style="color: #007BFF; text-decoration: none; font-weight: bold;">&larr; Volver al Menú de Servicios (ElectroBlack)</a></p>
+            </main>
+
+            <footer style="margin-top: 20px;">
+                <p style="text-align: center; font-size: 0.85em; color: #555;">&copy; 2026 ElectroBlack S.A. Soporte Técnico de Cómputo Especializado.</p>
+            </footer>
+        </div>
+
+        <!-- COLUMNA DERECHA: BANNERS INFORMATIVOS -->
+        <div style="flex: 1; min-width: 260px; max-width: 350px; display: flex; flex-direction: column; gap: 15px; box-sizing: border-box; margin: 0 auto;">
+            
+            <!-- Primer Banner: Mantenimiento -->
+            <div style="background-color: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); box-sizing: border-box;">
+                <img 
+                    src="BANNER_MANTENIMIENTO.jpg" 
+                    alt="Banner Oficial de Mantenimiento y Soporte Técnico - ElectroBlack" 
+                    style="width: 100%; height: auto; display: block; border-radius: 4px;"
+                >
+            </div>
+
+            <!-- Segundo Banner: Computación -->
+            <div style="background-color: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); box-sizing: border-box;">
+                <img 
+                    src="IMG-20260527-WA0041.jpg" 
+                    alt="Banner de Configuración de Hardware y Computación - ElectroBlack" 
+                    style="width: 100%; height: auto; display: block; border-radius: 4px;"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

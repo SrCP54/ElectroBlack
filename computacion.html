@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computación Avanzada - ElectroBlack</title>
+</head>
+<body style="font-family: sans-serif; background-color: #f9f9f9; color: #222; margin: 0; padding: 15px; box-sizing: border-box;">
+
+    <!-- ENCABEZADO MODERNO Y ESTÉTICO -->
+    <header style="background-color: #000000; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 20px; text-align: center; box-sizing: border-box;">
+        <img src="IMG-20260527-WA0030.jpg" alt="Logo ElectroBlack" style="max-width: 150px; width: 100%; height: auto; display: block; margin: 0 auto 15px;">
+        <h1 style="font-size: 1.6em; margin: 0; color: #ffffff; letter-spacing: 1px; font-weight: 700;">División de Cómputo Avanzado y Presupuestos</h1>
+        <p style="font-size: 1em; color: #cccccc; margin-top: 10px; font-weight: 300;">Laboratorio especializado en optimización de hardware y sistemas operativos</p>
+    </header>
+
+    <main>
+        <!-- SECCIÓN PRINCIPAL DEL ARCHIVO -->
+        <section style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 20px; box-sizing: border-box;">
+            <h2>Apartado: Computación</h2>
+            <p>Bienvenido a la división tecnológica de ElectroBlack. Aquí gestionamos soluciones de hardware de alto rendimiento, optimización de environments y presupuestos a medida.</p>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+            <!-- SUBSECCIÓN: ARMADO Y COTIZACIÓN -->
+            <article>
+                <h3>Subsección A: Armado y Cotización de PC</h3>
+                <p>Utiliza nuestro configurador dinámico para seleccionar la arquitectura de tu próximo equipo y cotizar su ensamblaje en nuestro laboratorio:</p>
+
+                <div style="margin-top: 15px; margin-bottom: 20px; text-align: center;">
+                    <img src="IMG-20260527-WA0041.jpg" alt="Banner de Restauración y Cambio de Sistemas Operativos Windows 10 y Windows 11 - ElectroBlack" style="max-width: 100%; width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                </div>
+
+                <form action="#" method="POST">
+                    
+                    <!-- 1. COMPONENTE: PLATAFORMA Y PROCESADOR (CPU) -->
+                    <fieldset style="margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+                        <legend><h4>1. Plataforma y Procesador (CPU)</h4></legend>
+                        
+                        <p><strong>Paso A: Selecciona la marca de tu plataforma:</strong></p>
+                        <input type="radio" id="radio_amd" name="plataforma" value="AMD" onclick="filtrarProcesadores()">
+                        <label for="radio_amd"><strong>Advanced Micro Devices (AMD)</strong></label>
+                        <br><br>
+                        <input type="radio" id="radio_intel" name="plataforma" value="Intel" onclick="filtrarProcesadores()">
+                        <label for="radio_intel"><strong>Intel</strong></label>
+
+                        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 15px 0;">
+
+                        <!-- Contenedor de listas desplegables CPU -->
+                        <div id="paso_b_cpu" style="display: none;">
+                            <p><label for="select_procesador"><strong>Paso B: Selecciona tu procesador disponible de la lista:</strong></label></p>
+                            
+                            <!-- Desplegable AMD -->
+                            <select id="select_amd" name="procesador" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; display: none;">
+                                <option value="" disabled selected>-- Elige un modelo Ryzen --</option>
+                                <option value="ryzen_5_5500">AMD Ryzen 5 5500</option>
+                                <option value="ryzen_5_5600GT">AMD Ryzen 5 5600GT</option>
+                                <option value="ryzen_7_5700x">AMD Ryzen 7 5700X</option>
+                                <option value="ryzen_7_7700x">AMD Ryzen 7 7700X</option>
+                                <option value="ryzen_5_8600G">AMD Ryzen 5 8600G</option>
+                                <option value="ryzen_7_7800X3D">AMD Ryzen 7 7800X3D</option>
+                                <option value="ryzen_9_9950X3D2">AMD Ryzen 9 9950X3D2</option>
+                            </select>
+
+                            <!-- Desplegable Intel -->
+                            <select id="select_intel" name="procesador" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; display: none;" disabled>
+                                <option value="" disabled selected>-- Elige un modelo Core / Ultra --</option>
+                                <option value="core_i5_10400f">Intel Core i5 10400F</option>
+                                <option value="core_i5_14400kf">Intel Core i5 14400KF Unlocked</option>
+                                <option value="core_i7_14700kf">Intel Core i7 14700KF Unlocked</option>
+                                <option value="core_i9_14900k">Intel Core i9 14900K Unlocked</option>
+                                <option value="core_ultra_9">Intel Core Ultra 9</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <!-- 2. COMPONENTE: TARJETA GRÁFICA (GPU) -->
+                    <fieldset style="margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+                        <legend><h4>2. Tarjeta Gráfica (GPU)</h4></legend>
+                        
+                        <p><strong>Paso A: Selecciona la marca de tu tarjeta gráfica:</strong></p>
+                        <input type="radio" id="radio_gpu_amd" name="marca_gpu" value="AMD_GPU" onclick="filtrarGraficas()">
+                        <label for="radio_gpu_amd"><strong>AMD Radeon</strong></label>
+                        <br><br>
+                        <input type="radio" id="radio_gpu_nvidia" name="marca_gpu" value="NVIDIA_GPU" onclick="filtrarGraficas()">
+                        <label for="radio_gpu_nvidia"><strong>NVIDIA GeForce</strong></label>
+
+                        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 15px 0;">
+
+                        <!-- Contenedor de listas desplegables GPU -->
+                        <div id="paso_b_gpu" style="display: none;">
+                            <p><label for="select_grafica"><strong>Paso B: Selecciona tu tarjeta gráfica disponible de la lista:</strong></label></p>
+                            
+                            <!-- Desplegable GPU AMD -->
+                            <select id="select_gpu_amd" name="grafica" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; display: none;">
+                                <option value="" disabled selected>-- Elige una Radeon RX --</option>
+                                <option value="rx_6700xt">AMD Radeon RX 6700 XT</option>
+                                <option value="rx_7900xtx">AMD Radeon RX 7900 XTX</option>
+                                <option value="rx_7900xt">AMD Radeon RX 9070 XT</option>
+                                <option value="rog_strix_rx580_8gb">ASUS ROG Strix Radeon RX 580 8GB OC Edition</option>
+                            </select>
+
+                            <!-- Desplegable GPU NVIDIA -->
+                            <select id="select_gpu_nvidia" name="grafica" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; display: none;" disabled>
+                                <option value="" disabled selected>-- Elige una GeForce RTX --</option>
+                                <option value="rtx_3070ti">ASUS TUF Gaming GeForce RTX 3070 Ti</option>
+                                <option value="msi_rtx_4060">MSI Ventus GeForce RTX 4060</option>
+                                <option value="zotac_rtx_4070ti">ZOTAC GAMING GeForce RTX 4070 Ti</option>
+                                <option value="msi_rtx_2080super">MSI GeForce RTX 2080 SUPER</option>
+                                <option value="aorus_rtx_4080super">GIGABYTE AORUS GeForce RTX 4080 SUPER</option>
+                                <option value="asus_rtx_5060">ASUS TUF Gaming GeForce RTX 5060</option>
+                                <option value="gigabyte_rtx_5080">GIGABYTE GeForce RTX 5080</option>
+                                <option value="msi_rtx_4090_suprim">MSI GeForce RTX 4090 Suprim Liquid X</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <!-- 3. COMPONENTE: MEMORIA RAM -->
+                    <fieldset style="margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+                        <legend><h4>3. Cantidad de RAM (GB)</h4></legend>
+                        <p>Selecciona la densidad de memoria de acceso aleatorio para el sistema:</p>
+                        
+                        <input type="checkbox" id="ram_opcion1" name="ram" value="ram_32gb_2x16">
+                        <label for="ram_opcion1">32GB (2x16GB)</label><br><br>
+
+                        <input type="checkbox" id="ram_opcion2" name="ram" value="ram_64gb_2x32">
+                        <label for="ram_opcion2">64GB (2x32GB)</label><br><br>
+                        
+                        <input type="checkbox" id="ram_opcion3" name="ram" value="ram_64gb_4x16">
+                        <label for="ram_opcion3">64GB (4x16GB)</label><br><br>
+
+                        <input type="checkbox" id="ram_opcion4" name="ram" value="ram_corsair_64gb">
+                        <label for="ram_opcion4">Corsair Vengeance 64GB (1x64GB)</label><br><br>
+
+                        <input type="checkbox" id="ram_opcion5" name="ram" value="ram_gskill_32gb_ddr5">
+                        <label for="ram_opcion5">G.Skill Trident Z5 RGB 32GB (DDR5)</label><br><br>
+                    </fieldset>
+
+                    <!-- 4. COMPONENTE: ALMACENAMIENTO -->
+                    <fieldset style="margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+                        <legend><h4>4. Cantidad de Almacenamiento (GB / TB)</h4></legend>
+                        <p>Selecciona las unidades de estado sólido (SSD):</p>
+                        
+                        <input type="checkbox" id="disco_opcion1" name="almacenamiento" value="ssd_m2_gen5_1tb">
+                        <label for="disco_opcion1">SSD M.2 NVMe Gen5 1TB</label><br><br>
+
+                        <input type="checkbox" id="disco_opcion2" name="almacenamiento" value="ssd_m2_gen3_512gb">
+                        <label for="disco_opcion2">SSD M.2 NVMe Gen3 512GB</label><br><br>
+                    </fieldset>
+
+                    <!-- 5. COMPONENTE: GAMA DE MOTHERBOARD -->
+                    <fieldset style="margin-bottom: 25px; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+                        <legend><h4>5. Gama de Motherboard</h4></legend>
+                        <p>Selecciona la serie del chipset de la placa base compatible con tus componentes:</p>
+                        
+                        <label for="gama_motherboard" style="display: block; margin-bottom: 8px;">Chipset compatible seleccionado: </label>
+                        <select id="gama_motherboard" name="gama_motherboard" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 100%; box-sizing: border-box;">
+                            <option value="A">A (Gama de entrada - AMD)</option>
+                            <option value="H">H (Gama de entrada - Intel)</option>
+                            <option value="B">B (Gama media - AMD/Intel)</option>
+                            <option value="Z">Z (Gama alta / Overclocking - Intel)</option>
+                            <option value="X">X (Entusiasta / Alto rendimiento - AMD)</option>
+                        </select>
+                    </fieldset>
+
+                    <!-- BOTÓN DE ENVÍO -->
+                    <button type="submit" style="background-color: #007BFF; color: #fff; padding: 12px; width: 100%; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1em; box-sizing: border-box;">
+                        Enviar Especificaciones para Presupuesto de Armado
+                    </button>
+                </form>
+            </article>
+
+        </section>
+        
+        <hr style="border: 0; border-top: 1px solid #ccc; margin-bottom: 20px;">
+        <p style="text-align: center;"><a href="index.html" style="color: #007BFF; text-decoration: none; font-weight: bold;">&larr; Volver a la página de inicio (ElectroBlack)</a></p>
+    </main>
+
+    <footer style="margin-top: 30px; padding: 10px 0;">
+        <p style="text-align: center; color: #666; font-size: 0.9em;">&copy; 2026 ElectroBlack S.A. Soporte Técnico de Cómputo Especializado e Ingeniería Frontend.</p>
+    </footer>
+
+    <!-- INTERRUPTOR LÓGICO DE COMPONENTES ACTUALIZADO -->
+    <script>
+        function filtrarProcesadores() {
+            var amdSeleccionado = document.getElementById("radio_amd").checked;
+            var intelSeleccionado = document.getElementById("radio_intel").checked;
+            
+            var contenedorCpu = document.getElementById("paso_b_cpu");
+            var selectAmd = document.getElementById("select_amd");
+            var selectIntel = document.getElementById("select_intel");
+
+            contenedorCpu.style.display = "block";
+
+            if (amdSeleccionado) {
+                selectAmd.style.display = "block";
+                selectAmd.disabled = false;
+                
+                selectIntel.style.display = "none";
+                selectIntel.disabled = true;
+                selectIntel.selectedIndex = 0;
+            } else if (intelSeleccionado) {
+                selectIntel.style.display = "block";
+                selectIntel.disabled = false;
+                
+                selectAmd.style.display = "none";
+                selectAmd.disabled = true;
+                selectAmd.selectedIndex = 0;
+            }
+        }
+
+        function filtrarGraficas() {
+            var gpuAmdSeleccionado = document.getElementById("radio_gpu_amd").checked;
+            var gpuNvidiaSeleccionado = document.getElementById("radio_gpu_nvidia").checked;
+            
+            var contenedorGpu = document.getElementById("paso_b_gpu");
+            var selectGpuAmd = document.getElementById("select_gpu_amd");
+            var selectGpuNvidia = document.getElementById("select_gpu_nvidia");
+
+            contenedorGpu.style.display = "block";
+
+            if (gpuAmdSeleccionado) {
+                selectGpuAmd.style.display = "block";
+                selectGpuAmd.disabled = false;
+                
+                selectGpuNvidia.style.display = "none";
+                selectGpuNvidia.disabled = true;
+                selectGpuNvidia.selectedIndex = 0;
+            } else if (gpuNvidiaSeleccionado) {
+                selectGpuNvidia.style.display = "block";
+                selectGpuNvidia.disabled = false;
+                
+                selectGpuAmd.style.display = "none";
+                selectGpuAmd.disabled = true;
+                selectGpuAmd.selectedIndex = 0;
+            }
+        }
+    </script>
+
+</body>
+</html>
