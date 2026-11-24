@@ -7,10 +7,8 @@
 </head>
 <body style="font-family: sans-serif; background-color: #f9f9f9; color: #222; margin: 0; padding: 15px; box-sizing: border-box;">
 
-    <!-- CONTENEDOR FLEXIBLE PRINCIPAL (Adaptable a móvil y escritorio) -->
     <div style="display: flex; flex-wrap: wrap; gap: 20px; box-sizing: border-box; max-width: 1200px; margin: 0 auto;">
         
-        <!-- COLUMNA IZQUIERDA: CONTENIDO PRINCIPAL Y FORMULARIO -->
         <div style="flex: 3; min-width: 280px; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); box-sizing: border-box;">
             
             <header style="margin-bottom: 20px; text-align: center;">
@@ -26,9 +24,8 @@
                     <h2 style="font-size: 1.4em; color: #222;">Reporte de Fallas e Inquietudes de Hardware</h2>
                     <p style="margin-bottom: 20px; font-size: 0.95em; line-height: 1.4;">Por favor, completa los siguientes datos para preparar una propuesta de reparación y diagnóstico a medida:</p>
 
-                    <form action="#" method="POST">
+                    <form id="formMantenimiento" action="https://formspree.io/f/xppdkovk" method="POST">
                         
-                        <!-- 1. DATOS DE CONTACTO -->
                         <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
                             <legend><h3 style="font-size: 1.1em; margin: 0;">1. Datos de Contacto Obligatorios</h3></legend>
                             <p style="margin-top: 10px;">
@@ -46,7 +43,6 @@
                             </p>
                         </fieldset>
 
-                        <!-- 2. TIPO DE MANTENIMIENTO -->
                         <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; line-height: 1.5;">
                             <legend><h3 style="font-size: 1.1em; margin: 0;">2. Tipo de Mantenimiento Requerido</h3></legend>
                             <p style="margin-top: 10px; margin-bottom: 15px;">Selecciona la modalidad de servicio técnico que deseas contratar:</p>
@@ -72,7 +68,6 @@
                             </div>
                         </fieldset>
 
-                        <!-- 3. CATEGORÍA DEL EQUIPO -->
                         <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; line-height: 1.5;">
                             <legend><h3 style="font-size: 1.1em; margin: 0;">3. Categoría del Equipo / Producto</h3></legend>
                             <p style="margin-top: 10px; margin-bottom: 15px;">Selecciona el tipo de equipo al que se le aplicará el servicio:</p>
@@ -108,7 +103,6 @@
                             </div>
                         </fieldset>
 
-                        <!-- 4. REPORTE DE SITUACIÓN -->
                         <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
                             <legend><h3 style="font-size: 1.1em; margin: 0;">4. Reporte de Situación e Inquietud</h3></legend>
                             <p style="margin-top: 10px;"><label for="descripcion_falla"><strong>Describe los síntomas, fallas o detalles específicos del equipo seleccionado:</strong></label></p>
@@ -122,8 +116,7 @@
                             ></textarea>
                         </fieldset>
 
-                        <!-- BOTÓN DE ENVÍO -->
-                        <button type="submit" style="background-color: #28A745; color: #fff; padding: 12px; width: 100%; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1em; box-sizing: border-box;">
+                        <button type="submit" id="btnEnviar" style="background-color: #28A745; color: #fff; padding: 12px; width: 100%; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1em; box-sizing: border-box;">
                             Enviar Reporte a Laboratorio
                         </button>
                     </form>
@@ -134,34 +127,80 @@
             </main>
 
             <footer style="margin-top: 20px;">
-                <p style="text-align: center; font-size: 0.85em; color: #555;">&copy; 2026 ElectroBlack S.A. Soporte Técnico de Cómputo Especializado.</p>
+                <p style="text-align: center; font-size: 0.85em; color: #555;">&copy; 2026 ElectroBlack. Soporte Técnico de Cómputo Especializado.</p>
             </footer>
         </div>
 
-        <!-- COLUMNA DERECHA: BANNERS INFORMATIVOS -->
         <div style="flex: 1; min-width: 260px; max-width: 350px; display: flex; flex-direction: column; gap: 15px; box-sizing: border-box; margin: 0 auto;">
-            
-            <!-- Primer Banner: Mantenimiento -->
             <div style="background-color: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); box-sizing: border-box;">
-                <img 
-                    src="BANNER_MANTENIMIENTO.jpg" 
-                    alt="Banner Oficial de Mantenimiento y Soporte Técnico - ElectroBlack" 
-                    style="width: 100%; height: auto; display: block; border-radius: 4px;"
-                >
+                <img src="BANNER_MANTENIMIENTO.jpg" alt="Banner Oficial de Mantenimiento y Soporte Técnico - ElectroBlack" style="width: 100%; height: auto; display: block; border-radius: 4px;">
             </div>
-
-            <!-- Segundo Banner: Computación -->
             <div style="background-color: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); box-sizing: border-box;">
-                <img 
-                    src="IMG-20260527-WA0041.jpg" 
-                    alt="Banner de Configuración de Hardware y Computación - ElectroBlack" 
-                    style="width: 100%; height: auto; display: block; border-radius: 4px;"
-                >
+                <img src="IMG-20260527-WA0041.jpg" alt="Banner de Configuración de Hardware y Computación - ElectroBlack" style="width: 100%; height: auto; display: block; border-radius: 4px;">
             </div>
-
         </div>
 
     </div>
+
+    <div id="modalConfirmacion" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.65); z-index: 9999; justify-content: center; align-items: center; padding: 15px; box-sizing: border-box;">
+        <div style="background-color: #ffffff; max-width: 450px; width: 100%; padding: 30px 25px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border-top: 5px solid #28A745; text-align: center; box-sizing: border-box; position: relative;">
+            <span style="font-size: 3em; display: block; margin-bottom: 10px;">✅</span>
+            <h2 style="color: #28A745; font-size: 1.5em; margin: 0 0 10px 0;">¡Reporte Enviado!</h2>
+            <p style="font-size: 0.98em; color: #444; line-height: 1.5; margin-bottom: 15px;">
+                Tu solicitud llegó directamente al correo de <strong>ElectroBlack</strong>. Revisaremos los datos de tu equipo y te responderemos pronto.
+            </p>
+            <p style="font-size: 0.85em; color: #666; background-color: #f4f4f4; padding: 10px; border-radius: 6px; margin-bottom: 20px;">
+                Revisa también tu carpeta de <em>Spam</em> por si nuestra respuesta cae allí.
+            </p>
+            <button onclick="cerrarModal()" style="background-color: #007BFF; color: #fff; border: none; padding: 11px 25px; font-size: 1em; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%;">
+                Entendido, cerrar aviso
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const formulario = document.getElementById('formMantenimiento');
+        const modal = document.getElementById('modalConfirmacion');
+        const btnEnviar = document.getElementById('btnEnviar');
+
+        formulario.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const textoOriginal = btnEnviar.innerText;
+            btnEnviar.innerText = "Enviando reporte...";
+            btnEnviar.disabled = true;
+            btnEnviar.style.backgroundColor = "#6c757d";
+
+            const datos = new FormData(formulario);
+
+            try {
+                const respuesta = await fetch(formulario.action, {
+                    method: formulario.method,
+                    body: datos,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (respuesta.ok) {
+                    formulario.reset();
+                    modal.style.display = 'flex';
+                } else {
+                    alert("Hubo un problema al enviar el formulario. Verifica que hayas colocado tu ID de Formspree.");
+                }
+            } catch (error) {
+                alert("Error de conexión. Revisa tu internet e inténtalo de nuevo.");
+            } finally {
+                btnEnviar.innerText = textoOriginal;
+                btnEnviar.disabled = false;
+                btnEnviar.style.backgroundColor = "#28A745";
+            }
+        });
+
+        function cerrarModal() {
+            modal.style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
